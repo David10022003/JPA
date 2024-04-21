@@ -1,14 +1,8 @@
-# JAX-RS Template Application
+## Efecto de agregar @OneToMany
+Al agregar la anotación `@OneToMany` a la entidad Competitor sobre la lista de productos, se establece una relación uno a muchos entre un Competitor y sus productos asociados. Esto indica a la base de datos que un usuario, en este caso el Competitor, puede tener varios productos. 
 
-This is a template for a lightweight RESTful API using JAX-RS. The sample code is a call for getting the current time.
-    
-## Running the application locally
+La ventaja de usar esta anotación es que cuando el JPA (Java Persistence API) trae los datos de la base de datos, automáticamente carga los productos asociados a cada Competitor en una única consulta, evitando así la necesidad de realizar consultas adicionales a la base de datos para obtener los productos de cada Competitor por separado.
 
-First build with:
+Esta funcionalidad proporciona una manera eficiente de manejar las relaciones entre entidades en una base de datos relacional utilizando JPA.
 
-    $mvn clean install
-
-Then run it with:
-
-    $ java -cp target/classes:target/dependency/* com.example.Main
 
